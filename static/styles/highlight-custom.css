@@ -1,0 +1,85 @@
+/* Vivid Light - Theme for highlight.js */
+
+
+/* medium gray */
+.hljs-comment {
+	color: hsl(220, 9%, 75%)
+}
+
+/* orange */
+.hljs-variable,
+.hljs-regexp,
+.hljs-attribute,
+.ruby .hljs-constant,
+.xml .hljs-pi,
+.xml .hljs-doctype,
+.html .hljs-doctype,
+.language-css .hljs-class,
+.language-css .hljs-pseudo {
+	color: hsl(33, 100%, 50%);
+}
+
+/* orange */
+.hljs-number,
+.language-css .css-rule .css-value,
+.hljs-preprocessor,
+.hljs-pragma,
+.hljs-built_in,
+.hljs-literal,
+.hljs-params,
+.hljs-constant,
+.hljs-class .hljs-title {
+	color: hsl(33, 100%, 50%);
+}
+
+/* light purple */
+.hljs-string,
+.hljs-value,
+.hljs-inheritance,
+.hljs-header,
+.ruby .hljs-symbol,
+.xml .hljs-cdata,
+.hljs-class .hljs-params {
+	color: hsl(270, 50%, 70%);
+}
+
+/* green */
+.hljs-decorator,
+.language-css .hljs-attribute,
+.ruby .hljs-title .hljs-keyword,
+.perl .hljs-sub {
+	color: hsl(95, 38%, 50%);
+}
+
+/* blue */
+.hljs-function .hljs-title,
+.language-css .hljs-id {
+	color: hsl(207, 82%, 60%);
+}
+
+/* magenta */
+.hljs-keyword,
+.hljs-function,
+.hljs-tag,
+.xml .hljs-tag .hljs-title {
+	color: hsl(329, 92%, 50%);
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: hsl(220, 14%, 40%);
+	background: #ebf0f2;
+	padding: 0.5em;
+	-webkit-text-size-adjust: none;
+}
+
+.coffeescript .javascript,
+.javascript .xml,
+.tex .hljs-formula,
+.xml .javascript,
+.xml .vbscript,
+.xml .css,
+.xml .hljs-cdata {
+	opacity: 0.5;
+}
