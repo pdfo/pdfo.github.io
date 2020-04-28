@@ -485,13 +485,12 @@
                         </p>
                         <ol>
                             <li>
-                                <code>solver</code>: a string indicating which solver to use.
-                                The default value for<code>solver</code> is
+                                <code>solver</code>: a string indicating which solver to use; default:
                                 <code>'uobyqa'</code> for unconstrained problems with at most 8 variables,
                                 <code>'newuoa'</code> for unconstrained problems with 9 or more variables,
                                 <code>'bobyqa'</code> for bound-constrained problems,
                                 <code>'lincoa'</code> for linearly constrained problems,
-                                <code>'cobyla'</code> for nonlinearly constrained problems.
+                                and <code>'cobyla'</code> for nonlinearly constrained problems.
                                 If you want to choose the solver, note that 
                                 <a class="theme-link" href="https://en.wikipedia.org/wiki/UOBYQA" target="_blank">UOBYQA</a> and 
                                 <a class="theme-link" href="https://en.wikipedia.org/wiki/NEWUOA" target="_blank">NEWUOA</a> can solve unconstrained problems, 
