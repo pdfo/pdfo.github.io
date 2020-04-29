@@ -470,7 +470,7 @@
                         <p id="chrosen">
                         The following code illustrates how to minimize the chained 
                         <a class="theme-link" href="https://en.wikipedia.org/wiki/Rosenbrock_function" target="_blank">Rosenbrock function</a>
-                        $$\sum_{i=1}^2 [(x_i - 1)^2 + 4(x_{i+1} - x_i^2)^2]$$ subject to various constraints.
+                        <small>$$\sum_{i=1}^2 [(x_i - 1)^2 + 4(x_{i+1} - x_i^2)^2]$$</small> subject to various constraints.
                         </p>
 
                         <div class="docs-code-block">
@@ -518,13 +518,14 @@
                             </li>
                             <li>
                                 <code>scale</code>: a boolean value indicating whether to scale the problem according to bound constraints; if it is <code>true</code>,
-                                the problem will be scaled so that all the variables with both lower and upper bounds are between \(-1\) and \(1\);  default: <code>false</code>.
+                                the problem will be scaled so that all the variables with both lower and upper bounds are between <small>\(-1\)</small> and <small>\(1\)</small>; 
+                                default: <code>false</code>.
                             </li>
                         </ol>
                         <p>
                         For instance, to minimize the aforementioned <a class="theme-link" href="#chrosen">chained Rosenbrock function</a> without constraints by 
-                        <a class="theme-link" href="https://en.wikipedia.org/wiki/LINCOA" target="_blank">LINCOA</a> with at most \(50\) function evaluations and 
-                        a target function value \(10^{-2}\), it suffices to replace <code>pdfo(@chrosen, x0)</code> in the above example by 
+                        <a class="theme-link" href="https://en.wikipedia.org/wiki/LINCOA" target="_blank">LINCOA</a> with at most <small>\(50\)</small> function evaluations and 
+                        a target function value <small>\(10^{-2}\)</small>, it suffices to replace <code>pdfo(@chrosen, x0)</code> in the above example by 
                         </p>
                         <pre class="shadow-lg rounded"><code class="displayed hljs">pdfo(@chrosen, x0, struct('solver', 'lincoa', 'maxfun', 50, 'ftarget', 1e-2))</code></pre>
                     </section>
@@ -589,8 +590,8 @@
                         the maximal number of function evaluations is named <code>maxfev</code> to align with the <code>minimize</code> function in <code>scipy.optimize</code>.
                         <p>
                         For instance, to minimize the aforementioned <a class="theme-link" href="#chrosen">chained Rosenbrock function</a> without constraints by
-                        <a class="theme-link" href="https://en.wikipedia.org/wiki/LINCOA" target="_blank">LINCOA</a> with at most \(50\) function evaluations and 
-                        a target function value \(10^{-2}\), it suffices to replace <code>pdfo(chrosen, x0)</code> in the above example by 
+                        <a class="theme-link" href="https://en.wikipedia.org/wiki/LINCOA" target="_blank">LINCOA</a> with at most <small>\(50\)</small> function evaluations and 
+                        a target function value <small>\(10^{-2}\)</small>, it suffices to replace <code>pdfo(chrosen, x0)</code> in the above example by 
                         </p>
                         <pre class="shadow-lg rounded"><code class="displayed hljs">pdfo(chrosen, x0, method='lincoa', options={'maxfev': 50, 'ftarget': 1e-2})</code></pre>
 
