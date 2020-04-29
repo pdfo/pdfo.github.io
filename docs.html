@@ -521,6 +521,12 @@
                                 the problem will be scaled so that all the variables with both lower and upper bounds are between \(-1\) and \(1\);  default: <code>false</code>.
                             </li>
                         </ol>
+                        <p>
+                        For instance, to minimize the aforementioned <a class="theme-link" href="#chrosen">chained Rosenbrock function</a> without constraints by 
+                        <a class="theme-link" href="https://en.wikipedia.org/wiki/LINCOA" target="_blank">LINCOA</a> with at most \(50\) function evaluations and 
+                        a target function value \(10^{-2}\), it suffices to replace <code>pdfo(@chrosen, x0)</code> in the above example by 
+                        </p>
+                        <pre class="shadow-lg rounded"><code class="displayed hljs">pdfo(@chrosen, x0, struct('solver', 'lincoa', 'maxfun', 50, 'ftarget', 1e-2))</code></pre>
                     </section>
 
                     <section class="docs-section" id="usage-python">
@@ -582,9 +588,9 @@
                         <a class="theme-link" href="#options-matlab">options for the MATLAB version</a> with the same names, except that
                         the maximal number of function evaluations is named <code>maxfev</code> to align with the <code>minimize</code> function in <code>scipy.optimize</code>.
                         <p>
-                        For instance, to minimize the aforementioned <a class="theme-link" href="#chrosen">chained Rosenbrock function</a> without constraints
-                        by <code>lincoa</code> with at most \(50\) function evaluations and a target function value \(10^{-2}\), it suffices to
-                        replace <code>pdfo(chrosen, x0)</code> in the above example by 
+                        For instance, to minimize the aforementioned <a class="theme-link" href="#chrosen">chained Rosenbrock function</a> without constraints by
+                        <a class="theme-link" href="https://en.wikipedia.org/wiki/LINCOA" target="_blank">LINCOA</a> with at most \(50\) function evaluations and 
+                        a target function value \(10^{-2}\), it suffices to replace <code>pdfo(chrosen, x0)</code> in the above example by 
                         </p>
                         <pre class="shadow-lg rounded"><code class="displayed hljs">pdfo(chrosen, x0, method='lincoa', options={'maxfev': 50, 'ftarget': 1e-2})</code></pre>
 
