@@ -504,7 +504,7 @@ class="hljs-attr">mex</span>('-v', <span class="hljs-attr">fullfile</span>(matla
                                 constrained problems; <a class="theme-link" href="https://en.wikipedia.org/wiki/COBYLA" target="_blank">COBYLA</a>
                                 can solve general nonlinear optimization problems, yet it is not recommended unless nonlinear constraints are present. 
                                 We observe that LINCOA sometimes outperforms NEWUOA on unconstrained problems. It is also worth noting that BOBYQA
-                                evaluates the objective function only at feasible points, while LINCOA and COBYLA may generate infeasible iterates. 
+                                evaluates the objective function only at feasible points, while LINCOA and COBYLA may explore infeasible points. 
                             </li>
                             <li>
                                 <code>maxfun</code>: maximal number of function evaluations; default: <code>500*length(x0)</code>.
