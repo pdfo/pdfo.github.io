@@ -367,6 +367,14 @@ a.theme-link:hover {
     opacity: .8
 }
 
+.iconfont { 
+        width: 1em; 
+        height: 1em; 
+        vertical-align: -0.15em; 
+        fill: currentColor;
+        overflow: hidden; 
+} 
+
 .social-list li {
     font-size: 0.95rem;
     background: #ebf0f2;
