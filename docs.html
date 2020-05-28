@@ -523,13 +523,13 @@ class="hljs-attr">mex</span>('-v', <span class="hljs-attr">fullfile</span>(matla
                             <li>
                                 <code>rhobeg</code>: initial trust-region radius; typically, <code>rhobeg</code> should be in the order of one tenth of the
                                 greatest expected change to a variable; <code>rhobeg</code> should be positive; default: <code>1</code> if the problem will not be scaled, and
-                                <code>0.5</code> if the problem will be scaled (in case of scaling, <code>rhobeg</code> will be used as the initial trust-region radius of the
-                                scaled problem).
+                                <code>0.5</code> if the problem will be scaled; in case of scaling, <code>rhobeg</code> will be used as the initial trust-region radius of the
+                                scaled problem.
                             </li>
                             <li>
                                 <code>rhoend</code>: final trust-region radius; <code>rhoend</code> reflects the precision of the approximate solution
-                                obtained by <code>pdfo</code>; <code>rhoend</code> should be positive and not larger than <code>rhobeg</code>; default: <code>1e-6</code> (in case
-                                of scaling, <code>rhoend</code> will be used as the final trust-region radius of the scaled problem).
+                                obtained by <code>pdfo</code>; <code>rhoend</code> should be positive and not larger than <code>rhobeg</code>; default: <code>1e-6</code>; in case
+                                of scaling, <code>rhoend</code> will be used as the final trust-region radius of the scaled problem.
                             </li>
                         </ol>
                         <p>
