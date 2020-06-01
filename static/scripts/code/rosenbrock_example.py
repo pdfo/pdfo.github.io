@@ -32,7 +32,7 @@ if __name__ == '__main__':
     nonlin_lb = [0, 0]
     nonlin_ub = [np.inf, np.inf]
     nonlin_con_ineq = NonlinearConstraint(nlc_ineq, nonlin_lb, nonlin_ub)  # inequality constraints: nonlin_lb <= nlc_ineq(x) <= nonlin_ub
-    nonlin_con_eq = NonlinearConstraint(nlc_eq, 0, 0)  # equality constraints: nlc_eq(x) = 0 
+    nonlin_con_eq = NonlinearConstraint(nlc_eq, 0, 0)  # equality constraint: nlc_eq(x) = 0 
     # Nonlinear constraints can also be written as follows: 
     #nonlin_con_ineq = {'type': 'ineq', 'fun': nlc_ineq}  # inequality constraint: nlc_ineq(x) >= 0
     #nonlin_con_eq = {'type': 'eq', 'fun': nlc_eq}  # inequality constraint: nlc_eq(x) = 0
