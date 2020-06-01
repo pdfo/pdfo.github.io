@@ -22,7 +22,7 @@ if __name__ == '__main__':
 
     print('\n1. Nonlinear constraints --- ||x||_2^2 = 1, x(i)^2 >= x(i+1) >= 0.5*x(i) >= 0 for i = 1, 2:\n')
     lb = [0, 0, 0]
-    ub = [np.inf, np.inf, np.inf]  # ub = [None, None, None] works equally well
+    ub = [np.inf, np.inf, np.inf]  # ub = [None, None, None] or ub = None works equally well
     bounds = Bounds(lb, ub)  # bound constraints: lb <= x <= ub
     # Bound constraints can also be written as: bounds = [(lb[0], ub[0]), (lb[1], ub[1]), (lb[2], ub[2])]
     A = [[0.5, -1, 0], [0, 0.5, -1]]
