@@ -71,6 +71,7 @@ code {
 }
 
 .bkg {
+    white-space: nowrap;
     background-color: #e8f0f0;
 }
 
@@ -698,7 +699,8 @@ a.theme-link:hover {
 }
 
 .docs-article .docs-section {
-    padding: 0.3rem 0;
+    padding: 0.3rem;
+    padding-top: 1rem
     /*	border-bottom: 1px solid #e7e9ed */
 }
 
