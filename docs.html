@@ -270,7 +270,7 @@
                             <h3>Installation of PDFO</h3>
 
                             <p>
-                            Download and decompress the <a class="theme-link" href="#download">source code package</a> of PDFO. 
+                            Download and decompress the <a class="theme-link" href="#download">source code package</a>.
                             You will obtain a folder containing <code>setup.m</code>. Place this
                             folder at the location where you want PDFO to be installed.
                             In MATLAB, change the directory to this folder, and execute the following command:
@@ -288,7 +288,7 @@
                         <section class="docs-section" id="installation-python-unix">
                             <h2>PDFO for Python on Linux and Mac</h2>
 
-                            <h3>Prerequisites</h3>
+                            <h3 id="prerequisites-python-unix">Prerequisites</h3>
 
                             <p>
                             To use the Python version of PDFO on Linux or Mac, you need 
@@ -300,7 +300,7 @@
                             </p>
                             <ol>
                                 <li>
-                                    <strong class="mr-1">Install Python</strong>(version 2.7 or above) following the
+                                    <strong class="mr-1">Install Python</strong> (version 2.7 or above) following the
                                     <a class="theme-link" href="https://www.python.org" target="_blank">Python website</a>.
                                     To include the headers on Linux, python3-dev or python-dev should be installed depending on the Python you want to use; on Mac, the headers are
                                     included by default if you install Python using <a class="theme-link" href="https://brew.sh/" target="_blank">Homebrew</a>.
@@ -324,7 +324,7 @@
                             <h3>Installation of PDFO</h3>
 
                             <p>
-                            PDFO can be installed via <a class="theme-link" href="https://pypi.org/project/pdfo">PyPI</a>. 
+                            We recommend installing PDFO via <a class="theme-link" href="https://pypi.org/project/pdfo">PyPI</a>. 
                             This does not need you to download the source code.
                             <a class="theme-link" href="https://pip.pypa.io/en/stable/installing" target="_blank">Install pip</a> in your system. Then execute
                             </p>
@@ -332,8 +332,7 @@
                             <pre class="shadow-lg rounded"><code class="displayed json hljs"><span class="hljs-attr">python</span> -m pip install pdfo</code></pre>
 
                             <p>
-                            in a command shell (e.g., 
-                            <a class="theme-link" href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)" target="_blank">bash</a>). 
+                            in a command shell (e.g., the <a class="theme-link" href="https://support.apple.com/guide/terminal/mac" target="_blank">terminal</a> in Linux or Mac).
                             If your Python launcher is not <code>python</code>, adapt the command accordingly.
                             If this command runs successfully, PDFO is installed. You may verify the installation by
                             </p>
@@ -343,8 +342,7 @@
                             <p style="margin-bottom:1.0rem;"> <!-- The original spacing does not work well here for some reason -->
                             Alternatively, PDFO can be installed from the source code:
                             download and decompress the <a class="theme-link" href="#download">source code package</a>; you will obtain a folder containing <code>setup.py</code>; 
-                            in a command shell, change your directory to this folder; then run either
-                            <code class="bkg"><span class="hljs-attr"> python</span> -m pip install ./ </code> or  
+                            in a command shell, change your directory to this folder, and then run
                             <code class="bkg"><span class="hljs-attr"> python</span> setup.py install --user</code> to install PDFO.
                             </p>
                         </section>
@@ -360,8 +358,7 @@
                             <a class = "theme-link" href="https://numpy.org/" target="_blank">NumPy</a>,
                             <a class = "theme-link" href="https://www.numfys.net/howto/F2PY/" target="_blank">F2PY</a>, 
                             <a class = "theme-link" href="https://software.intel.com/en-us/fortran-compilers" target="_blank">Intel Fortran compiler</a> (ifort),
-                            <a class="theme-link" href="http://en.wikipedia.org/wiki/Microsoft_Visual_Studio" target="_blank">Microsoft Visual Studio</a> and
-                            <a class="theme-link" href="http://en.wikipedia.org/wiki/Microsoft_Windows_SDK" target="_blank">Microsoft Windows SDK</a>,
+                            <a class="theme-link" href="http://en.wikipedia.org/wiki/Microsoft_Visual_Studio" target="_blank">Microsoft Visual Studio</a>,
                             which can be installed in the following way.
                             </p>
                             <ol>
@@ -379,9 +376,11 @@
                                     the Python libraries (included by default).
                                 </li>
                                 <li>
-                                    <strong class="mr-l">Install <a class="theme-link" href="https://visualstudio.microsoft.com" target="_blank">Microsoft Visual Studio</a> and 
-                                        <a class="theme-link" href="https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk" target="_blank">Microsoft Windows SDK</a></strong>. 
-                                    Make sure to include the C++ Build Tools in your installation of Microsoft Visual Studio. 
+                                    <strong class="mr-l">Install <a class="theme-link" href="https://visualstudio.microsoft.com" target="_blank">Microsoft Visual Studio</a></strong>.
+                                    Make sure to include the C++ Build Tools and 
+                                    <a class="theme-link" href="https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk" target="_blank">Microsoft Windows SDK</a>
+                                    in the installation. Microsoft Windows SDK can also be installed separately according to the 
+                                    <a class="theme-link" href="https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk" target="_blank">Microsoft website</a>.
                                 </li>
                             </ol>
 
@@ -392,17 +391,29 @@
                             This does not need you to download the source code.
                             <a class="theme-link" href="https://pip.pypa.io/en/stable/installing" target="_blank">Install pip</a> in your system.
                             In the 
-                            <a class="theme-link" href="https://software.intel.com/content/www/us/en/develop/documentation/fortran-compiler-developer-guide-and-reference/top/compiler-setup/using-the-command-line/using-the-command-line-on-windows.html" target="_blank">Intel command shell</a> (either 32 or 64-bit, depending on your Python version), execute
+                            <a class="theme-link"
+                                href="https://software.intel.com/content/www/us/en/develop/documentation/fortran-compiler-developer-guide-and-reference/top/compiler-setup/using-the-command-line/using-the-command-line-on-windows.html"
+                                target="_blank">Intel command shell</a> (either 32 or 64-bit, depending on your Python versio), execute
                             </p>
 
                             <pre class="shadow-lg rounded"><code class="displayed json hljs"><span class="hljs-attr">python</span> -m pip install pdfo</code></pre>
 
                             <p>
-                            If your Python launcher is not <code>python</code>, adapt the command accordingly.
+                            Make sure to run the above command in the correct Intel command shell, as it is critical to guarantee the compatibility between the compiler and you Python. 
+                            If your Python launcher is not <code>python</code>, adapt the command accordingly. 
                             If this command runs successfully, PDFO is installed. You may verify the installation by 
                             </p>
 
                             <pre class="shadow-lg rounded"><code class="displayed json hljs"><span class="hljs-attr">python</span> -m unittest pdfo.testpdfo</code></pre>
+
+                            <p style="margin-bottom:1.0rem;"> <!-- The original spacing does not work well here for some reason -->
+                            Note that an 
+                            <a class="theme-link" href="https://ubuntu.com/tutorials/tutorial-ubuntu-on-windows" target="_blank">Ubuntu terminal</a>
+                            is available on Windows 10. Within such a terminal, you can use the 
+                            <a class="theme-link" href="#installation-python-unix">Linux/Mac version</a> of PDFO. The 
+                            <a class="theme-link" href="#prerequisites-python-unix">prerequisites</a>
+                            are much easier to fulfill and no commercial software such as ifort is needed.
+                            </p>
 
                         </section>
                     </article>
