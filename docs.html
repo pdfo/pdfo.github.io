@@ -272,25 +272,19 @@
                             <h3>Installation of PDFO</h3>
 
                             <p>
-                            PDFO can be installed by the <code>setup.m</code> script in the source code package in the following straightforward way.
+                            Download and decompress the <a class="theme-link" href="#download">source code package</a> of PDFO. 
+                            You will obtain a folder containing <code>setup.m</code>. Place this
+                            folder at the location where you want PDFO to be installed.
+                            In MATLAB, change the directory to this folder, and execute the following command:
                             </p>
-                            <ol>
-                                <li>
-                                    Download and decompress the <a class="theme-link" href="#download">source code package</a> of PDFO if you
-                                    have not done so. You will obtain a folder containing <code>setup.m</code>. Place this
-                                    folder at the location where you want PDFO to be installed.
-                                </li>
-                                <li>
-                                    In MATLAB, change the directory to the aforementioned folder, and execute the following command to install PDFO:
 
-                                    <pre class="shadow-lg rounded"><code class="displayed json hljs">setup</code></pre>
-                                </li>
-                                <li>
-                                    After the installation, you may run the following command in MATLAB for verification:
+                            <pre class="shadow-lg rounded"><code class="displayed json hljs">setup</code></pre>
 
-                                    <pre class="shadow-lg rounded"><code class="displayed json hljs">testpdfo</code></pre>
-                                </li>
-                            </ol>
+                            <p>
+                            If this command runs successfully, PDFO is installed. You may execute the following command in MATLAB to verify the installation:
+                            </p>
+
+                            <pre class="shadow-lg rounded"><code class="displayed json hljs">testpdfo</code></pre>
                         </section>
 
                         <section class="docs-section" id="installation-python-unix">
@@ -300,7 +294,7 @@
 
                             <p>
                             To use the Python version of PDFO on Linux or Mac, you need 
-                            <a class = "theme-link" href="https://www.python.org" target="_blank">Python</a> (including the headers), 
+                            <a class = "theme-link" href="https://www.python.org" target="_blank">Python</a> (headers included), 
                             <a class = "theme-link" href="https://numpy.org" target="_blank">NumPy</a>,
                             <a class = "theme-link" href="https://www.numfys.net/howto/F2PY" target="_blank">F2PY</a>, and
                             <a class = "theme-link" href="https://gcc.gnu.org/wiki/GFortran" target="_blank">gfortran</a>,
@@ -332,8 +326,8 @@
                             <h3>Installation of PDFO</h3>
 
                             <p>
-                            We recommend installing PDFO via <a class="theme-link" href="https://pypi.org/project/pdfo">PyPI</a>, 
-                            which does not need you to download the <a class="theme-link" href="#download">source code package</a>.
+                            PDFO can be installed via <a class="theme-link" href="https://pypi.org/project/pdfo">PyPI</a>. 
+                            This does not need you to download the <a class="theme-link" href="#download">source code</a>.
                             <a class="theme-link" href="https://pip.pypa.io/en/stable/installing" target="_blank">Install pip</a> in your system. Then execute
                             </p>
 
@@ -342,19 +336,18 @@
                             <p>
                             in a command shell (e.g., 
                             <a class="theme-link" href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)" target="_blank">bash</a>). 
-                            If this command runs successfully, PDFO is installed. You can then test the installation by executing
+                            If this command runs successfully, PDFO is installed. You may verify the installation by
                             </p>
 
                             <pre class="shadow-lg rounded"><code class="displayed json hljs"><span class="hljs-attr">python</span> -m unittest pdfo.testpdfo</code></pre>
-                            
-                            <p>
-                            Alternatively, you can install PDFO from the source code.
-                            Download the <a class="theme-link" href="#download">source code package</a>. Decompressing the package, you will obtain a folder. In a command shell,
-                            change your directory to this folder. Then you can install PDFO by running either
-                            <code class="bkg"><span class="hljs-attr">python</span> -m pip install ./ </code> or  
-                            <code class="bkg"><span class="hljs-attr">python</span> setup.py install --user </code>.
-                            </p>
 
+                            <p>
+                            Alternatively, PDFO can be installed from the source code:
+                            download and decompress the <a class="theme-link" href="#download">source code package</a>; you will obtain a folder containing <code>setup.py</code>; 
+                            in a command shell, change your directory to this folder; then run either
+                            <code class="bkg"><span class="hljs-attr"> python</span> -m pip install ./ </code> or  
+                            <code class="bkg"><span class="hljs-attr"> python</span> setup.py install --user </code> to install PDFO.
+                            </p>
                         </section>
 
                         <section class="docs-section" id="installation-python-win">
@@ -396,8 +389,8 @@
                             <h3>Installation of PDFO</h3>
 
                             <p>
-                            We recommend installing PDFO via <a class="theme-link" href="https://pypi.org/project/pdfo">PyPI</a>,
-                            which does not need you to download the <a class="theme-link" href="#download">source code package</a>.
+                            PDFO can be installed via <a class="theme-link" href="https://pypi.org/project/pdfo">PyPI</a>.
+                            This does not need you to download the <a class="theme-link" href="#download">source code</a>.
                             <a class="theme-link" href="https://pip.pypa.io/en/stable/installing" target="_blank">Install pip</a> in your system.
                             In the 
                             <a class="theme-link" href="https://software.intel.com/content/www/us/en/develop/documentation/fortran-compiler-developer-guide-and-reference/top/compiler-setup/using-the-command-line/using-the-command-line-on-windows.html" target="_blank">Intel command shell</a> (either 32 or 64-bit, depending on your Python version), execute
@@ -406,9 +399,9 @@
                             <pre class="shadow-lg rounded"><code class="displayed json hljs"><span class="hljs-attr">python</span> -m pip install pdfo</code></pre>
 
                             <p>
-                            If this command runs successfully, PDFO is installed. You can then test the installation by executing
+                            If this command runs successfully, PDFO is installed. You may verify the installation by 
                             </p>
-                             
+
                             <pre class="shadow-lg rounded"><code class="displayed json hljs"><span class="hljs-attr">python</span> -m unittest pdfo.testpdfo</code></pre>
 
                         </section>
