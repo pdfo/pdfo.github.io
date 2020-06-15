@@ -357,7 +357,7 @@
 
                             <p>
                                 To use the Python version of PDFO on Windows, you need
-                                <a class = "theme-link" href="https://www.python.org" target="_blank">Python 3</a> (PDFO does not support Python 2 on Windows),
+                                <a class = "theme-link" href="https://www.python.org" target="_blank">Python 3</a> (only 3.7 and earlier, and PDFO does not support Python 2 on Windows),
                                 <a class = "theme-link" href="https://numpy.org/" target="_blank">NumPy</a>,
                                 <a class = "theme-link" href="https://www.numfys.net/howto/F2PY/" target="_blank">F2PY</a>,
                                 <a class="theme-link" href="http://en.wikipedia.org/wiki/Microsoft_Visual_Studio" target="_blank">Microsoft Visual Studio</a>, and
@@ -381,7 +381,8 @@
                                 <li>
                                     <strong class="mr-1">Install the Intel Fortran compiler</strong> according to the 
                                     <a class="theme-link" href="https://software.intel.com/en-us/fortran-compilers" target="_blank">Intel website</a> . Your installation has to include
-                                    the Intel Distribution for Python (included by default).
+                                    the <a class="theme-link" href="https://software.intel.com/content/www/us/en/develop/tools/distribution-for-python.html" target="_blank">Intel Distribution for Python</a> (included by default).
+                                    It supports only Python 3.7 and earlier: make sure that your version of Python is compatible.
                                 </li>
                             </ol>
 
@@ -635,7 +636,7 @@
                     <!-- Issues -->
                     <article class="docs-article" id="issues">
                         <header class="docs-header">
-                            <h1>Issues <span class="docs-time d-none d-md-flex">Last update: June 10, 2020</span></h1>
+                            <h1>Issues <span class="docs-time d-none d-md-flex">Last update: June 15, 2020</span></h1>
                         </header>
 
                         <p>
@@ -665,6 +666,16 @@
                                         </td>
                                         <td>
                                             64-bit Python is supported by version 1.0 on Windows.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="normal-weight">2</th>
+                                        <td>
+                                            Intel Distribution for Python is available only for Python 3.7 and earlier: version 1.0
+                                            of PDFO cannot be compiled on Windows for Python 3.8 and onwards.
+                                        </td>
+                                        <td>
+                                            Anaconda for Windows is distributed with Python 3.7.
                                         </td>
                                     </tr>
                                 </tbody>
