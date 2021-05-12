@@ -251,11 +251,7 @@
                             of your MATLAB so that it can compile Fortran. To check whether your MEX is ready, run the following code in MATLAB:
                             </p>
 
-                            <pre class="shadow-lg rounded"><code class="displayed hljs"><span class="hljs-attr">mex</span>('-setup', '-v', 'FORTRAN');
-                            <span class="hljs-attr">mex</span>('-v', <span class="hljs-attr">fullfile</span>(matlabroot, 'extern', 'examples', 'refbook', 'timestwo.F'));
-                            <span class="hljs-attr">timestwo</span>(1);
-                            <span class="hljs-attr">delete</span>('timestwo.mex*');
-                            </code></pre>
+                            <pre class="shadow-lg rounded"><code class="displayed hljs"><span class="hljs-attr">mex</span>('-setup', '-v', 'FORTRAN'); <span class="hljs-attr">mex</span>('-v', <span class="hljs-attr">fullfile</span>(matlabroot, 'extern', 'examples', 'refbook', 'timestwo.F')); <span class="hljs-attr">timestwo</span>(1); <span class="hljs-attr">delete</span>('timestwo.mex*'); </code></pre>
 
                             <p>
                             It will attempt to set up your MEX and then compile an <a class="theme-link" href="https://www.mathworks.com/help/matlab/matlab_external/create-fortran-source-mex-file.html" target="blank">example provided by MathWorks</a>
