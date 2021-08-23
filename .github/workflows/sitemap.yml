@@ -1,0 +1,87 @@
+# Workflow to generate and commit a sitemap
+name: Generate a sitemap
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  # Run the workflow when it is manually triggered
+  workflow_dispatch:
+
+jobs:
+  # Generate a sitemap and commit it to the repository
+  generate-sitemap:
+    name: Generate and commit a sitemap
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout pdfo.github.io
+      uses: actions/checkout@v2
+      with:
+        # Set the main branch for the git-auto-commit-action action
+        # It is otherwise undefined for any non-push event
+        ref: ${{ github.head_ref }}
+        # Ensure that the generate-sitemap action has access to the commit history
+        fetch-depth: 0
+
+    - name: Generate the sitemap
+      id: sitemap
+      uses: cicirello/generate-sitemap@v1
+      with:
+        base-url-path: https://www.pdfo.net/
+
+    - name: Output statistics
+      run: |
+        echo "sitemap-path = ${{ steps.sitemap.outputs.sitemap-path }}"
+        echo "url-count = ${{ steps.sitemap.outputs.url-count }}"
+        echo "excluded-count = ${{ steps.sitemap.outputs.excluded-count }}"
+
+    - name: Check for changes
+      # The storage and the commit are triggered only if the sitemap changed
+      run: |
+        echo "status=$(git status --porcelain sitemap.xml)" >> $GITHUB_ENV
+
+    - name: Store artifacts
+      if: ${{ env.status }}
+      uses: actions/upload-artifact@v2
+      with:
+        path: ./sitemap.xml
+
+    - name: Commit the sitemap
+      if: ${{ env.status }}
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Update sitemap.xml
+        # Used by `git-commit`
+        # See https://git-scm.com/docs/git-commit#_options
+        commit_options: '--no-verify --signoff'
+        # Global pattern of files which should be added to the commit
+        # See the `pathspec`-documentation for git
+        # - https://git-scm.com/docs/git-add#Documentation/git-add.txt-ltpathspecgt82308203
+        # - https://git-scm.com/docs/gitglossary#Documentation/gitglossary.txt-aiddefpathspecapathspec
+        file_pattern: sitemap.xml
+        # Local file path to the repository
+        repository: .
+        # Commit user and author settings
+        commit_user_name: pdfo
+        commit_user_email: pdfocode@gmail.com
+        commit_author: PDFO <pdfocode@gmail.com>
+        # Used by `git-status`
+        # See https://git-scm.com/docs/git-status#_options
+        status_options: '--untracked-files=no'
+        # Used by `git-add`
+        # See https://git-scm.com/docs/git-add#_options
+        add_options: '-u'
+        # Used by `git-push`
+        # See https://git-scm.com/docs/git-push#_options
+        push_options: '--force'
+        # Disable dirty check and always try to create a commit and push
+        skip_dirty_check: true
+        # Skip internal call to `git fetch`
+        skip_fetch: true
+        # Prevents the shell from expanding filenames
+        # Details: https://www.gnu.org/software/bash/manual/html_node/Filename-Expansion.html
+        disable_globbing: true
