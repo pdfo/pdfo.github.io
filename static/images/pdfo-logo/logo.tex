@@ -1,0 +1,14 @@
+\documentclass[tikz,crop,convert={outext=.svg,command=\unexpanded{pdf2svg \infile\space\outfile}},multi=false]{standalone}
+\usetikzlibrary{shapes.geometric}
+
+\usepackage{xcolor}
+\definecolor{194052TCX}{HTML}{0F4C81}
+
+\begin{document}
+
+\begin{tikzpicture}
+    \node[regular polygon,regular polygon sides=6,rounded corners=15pt,fill=194052TCX,minimum size=30cm] at (0,0) {};
+    \node[text=white] at (0,0) {\scalebox{80}{$\pi$}};
+\end{tikzpicture}
+
+\end{document}
