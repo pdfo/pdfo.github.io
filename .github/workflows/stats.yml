@@ -1,5 +1,5 @@
-# Workflow to generate and commit a sitemap
-name: Generate a sitemap
+# Workflow to get download count statistics
+name: Get download counts
 
 on:
   push:
@@ -8,53 +8,40 @@ on:
   pull_request:
     branches:
       - master
+  # Run the workflow at the end of every day
+  schedule:
+    - cron: '0 0 * * *'
   # Run the workflow when it is manually triggered
   workflow_dispatch:
 
 jobs:
-  # Generate a sitemap and commit it to the repository
-  generate-sitemap:
-    name: Generate and commit a sitemap
-    runs-on: ubuntu-latest
+  # Generate the statistics in JSON format
+  get-stats:
+    name: Get the statistics
+      runs-on: ubuntu-latest
 
     steps:
       - name: Checkout pdfo.github.io
         uses: actions/checkout@v2
-        with:
-          # Set the main branch for the git-auto-commit-action action
-          # It is otherwise undefined for any non-push event
-          ref: ${{ github.head_ref }}
-          # Ensure that the generate-sitemap action has access to the commit history
-          fetch-depth: 0
 
-      - name: Generate the sitemap
-        id: sitemap
-        uses: cicirello/generate-sitemap@v1
-        with:
-          base-url-path: https://www.pdfo.net/
+      - name: Setup Python
+        uses: actions/setup-python@v2
 
-      - name: Output statistics
+      - name: Set the dump file
         run: |
-          echo "sitemap-path = ${{ steps.sitemap.outputs.sitemap-path }}"
-          echo "url-count = ${{ steps.sitemap.outputs.url-count }}"
-          echo "excluded-count = ${{ steps.sitemap.outputs.excluded-count }}"
+          echo "file_name=./static/scripts/stats/stats.json" >> $GITHUB_ENV
 
-      - name: Check for changes
-        # The storage and the commit are triggered only if the sitemap changed
+      - name: Generate statistics
         run: |
-          echo "status=$(git status --porcelain sitemap.xml)" >> $GITHUB_ENV
+          python -m venv venv
+          source venv/bin/activate
+          python -m pip install -r ./static/scripts/stats/requirements.txt
+          python ./static/scripts/stats/counts.py ${{ env.file_name }}
 
-      - name: Store artifacts
-        if: ${{ env.status }}
-        uses: actions/upload-artifact@v2
-        with:
-          path: ./sitemap.xml
-
-      - name: Commit the sitemap
-        if: ${{ env.status }}
+      - name: Commit the statistics
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Update sitemap.xml
+          commit_message: Update ${{ env.file_name }}
           # Used by `git-commit`
           # See https://git-scm.com/docs/git-commit#_options
           commit_options: '--no-verify --signoff'
@@ -62,7 +49,7 @@ jobs:
           # See the `pathspec`-documentation for git
           # - https://git-scm.com/docs/git-add#Documentation/git-add.txt-ltpathspecgt82308203
           # - https://git-scm.com/docs/gitglossary#Documentation/gitglossary.txt-aiddefpathspecapathspec
-          file_pattern: sitemap.xml
+          file_pattern: ${{ env.file_name }}
           # Local file path to the repository
           repository: .
           # Commit user and author settings
