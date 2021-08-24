@@ -18,7 +18,7 @@ jobs:
   # Generate the statistics in JSON format
   get-stats:
     name: Get the statistics
-      runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout pdfo.github.io
