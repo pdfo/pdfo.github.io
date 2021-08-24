@@ -23,6 +23,10 @@ jobs:
     steps:
       - name: Checkout pdfo.github.io
         uses: actions/checkout@v2
+        with:
+          # Set the main branch for the git-auto-commit-action action
+          # It is otherwise undefined for any non-push event
+          ref: ${{ github.head_ref }}
 
       - name: Setup Python
         uses: actions/setup-python@v2
@@ -49,7 +53,7 @@ jobs:
           # See the `pathspec`-documentation for git
           # - https://git-scm.com/docs/git-add#Documentation/git-add.txt-ltpathspecgt82308203
           # - https://git-scm.com/docs/gitglossary#Documentation/gitglossary.txt-aiddefpathspecapathspec
-          file_pattern: ${{ env.file_name }}
+          file_pattern: '*.json'
           # Local file path to the repository
           repository: .
           # Commit user and author settings
