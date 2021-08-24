@@ -66,23 +66,23 @@
                         <div class="d-none d-sm-flex align-items-center">
                             <ul class="social-list list-inline mx-5 mb-0">
                                 <li class="list-inline-item">
-                                    <a href="https://github.com/pdfo/pdfo" target="_blank">
-                                        <i class="fab fa-github fa-fw"></i>
-                                    </a>
+                                    <a href="https://github.com/pdfo/pdfo" target="_blank"> <i class="fab fa-github fa-fw"></i> </a>
                                 </li>
                             </ul>
-                            <a href="docs.html#installation" class="dark-bg btn btn-primary">Installation</a>
                             <div class="btn-group ml-3" role="group" id="badgeDownloads" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <button type="button" class="btn btn-secondary total-downloads"></button>
+                                <button type="button" class="btn btn-primary total-downloads"></button>
                                 <button type="button" class="btn btn-primary dropdown-toggle">downloads</button>
                             </div>
                             <div class="dropdown-menu" aria-labelledby="badgeDownloads">
-                                <div class="dropdown-item">GitHub: <span class="github-downloads"></span></div>
-                                <div class="dropdown-item">PyPI: <span class="pypi-downloads"></span></div>
-                                <div class="dropdown-item">Anaconda: <span class="conda-downloads"></span></div>
+                                <div class="dropdown-item small">GitHub: <span class="github-downloads"></span></div>
+                                <div class="dropdown-item small">PyPI: <span class="pypi-downloads"></span></div>
+                                <div class="dropdown-item small">Anaconda: <span class="conda-downloads"></span></div>
                                 <div class="dropdown-divider"></div>
-                                <div class="dropdown-item">Retrieved on <span class="date-downloads"></span></div>
+                                <div class="dropdown-item small">Retrieved on <span class="date-downloads"></span></div>
+                                <div class="dropdown-item small">Mirrior downloads excluded<span class="date-downloads"></span></div>
                             </div>
+                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                            <a href="docs.html#installation" class="dark-bg btn btn-primary">Installation</a>
                         </div>
                     </div>
                 </div>
@@ -121,10 +121,10 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#installation-matlab">PDFO for MATLAB</a>
+                            <a class="nav-link" href="#installation-matlab">MATLAB</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#installation-python">PDFO for Python</a>
+                            <a class="nav-link" href="#installation-python">Python</a>
                         </li>
 
                         <!-- Usage -->
@@ -136,10 +136,10 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#usage-matlab">PDFO for MATLAB</a>
+                            <a class="nav-link" href="#usage-matlab">MATLAB</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#usage-python">PDFO for Python</a>
+                            <a class="nav-link" href="#usage-python">Python</a>
                         </li>
 
                         <!-- Releases -->
@@ -236,6 +236,9 @@
                                 <a href="https://github.com/pdfo/pdfo/releases/download/v1.1/pdfo-1.1.zip"><i class="fas fa-download mr-2"></i>Version 1.1</a>
                             </li>
                         </ul>
+                        <p>
+                        While MATLAB users need to download this source code package to install PDFO, Python users can install PDFO via PyPI without this package. See the <a class="theme-link" href="#installation">Installation</a> section for more details.
+                        </p>
 
                     </article>
 
@@ -250,7 +253,7 @@
                         </p>
 
                         <section class="docs-section" id="installation-matlab">
-                            <h2>PDFO for MATLAB</h2>
+                            <h2>MATLAB</h2>
 
                             <h3>Prerequisites</h3>
 
@@ -273,7 +276,7 @@
                                 Follow the <a class="theme-link" href="https://www.mathworks.com/support/requirements/previous-releases.html" target="_blank">official documentation</a> closely.
                             </p>
 
-                            <h3>Installation of PDFO</h3>
+                            <h3>Installation</h3>
 
                             <p>
                                 Download and decompress the <a class="theme-link" href="#download">source code package</a>.
@@ -293,7 +296,7 @@
                         </section>
 
                         <section class="docs-section" id="installation-python">
-                            <h2>PDFO for Python</h2>
+                            <h2>Python</h2>
 
                             <h3>Recommended installation</h3>
 
@@ -329,7 +332,8 @@
                             <p>
                                 Alternatively, although deeply discouraged, PDFO can be installed from the source code.
                                 It requires you to install additional Python headers, a Fortran compiler (e.g., <a class="theme-link" href="https://gcc.gnu.org/fortran/" target="_blank">gfortran</a>), and <a class="theme-link" href="https://numpy.org/doc/stable/f2py/" target="_blank">F2PY</a> (provided by <a class="theme-link" href="https://numpy.org" target="_blank">NumPy</a>).
-                                Download and decompress the <a class="theme-link" href="#download">source code package</a>; you will obtain a folder containing <code>setup.py</code>; in a command shell, change your directory to this folder, and then run <code class="bkg"><span class="hljs-attr"> python</span> -m pip install .</code> to install PDFO.
+                                Download and decompress the <a class="theme-link" href="#download">source code package</a>; you will obtain a folder containing
+                                <code>setup.py</code>; in a command shell, change your directory to this folder, and then run <code class="bkg"><span class="hljs-attr"> python</span> -m pip install ./</code> to install PDFO.
                             </p>
                         </section>
                     </article>
@@ -341,7 +345,7 @@
                         </header>
 
                         <section class="docs-section" id="usage-matlab">
-                            <h2>PDFO for MATLAB</h2>
+                            <h2>MATLAB</h2>
 
                             <p>
                                 PDFO provides the following MATLAB functions: <code>pdfo</code>, <code>uobyqa</code>, <code>newuoa</code>, <code>bobyqa</code>, <code>lincoa</code>, and <code>cobyla</code>.
@@ -419,7 +423,7 @@
                         </section>
 
                         <section class="docs-section" id="usage-python">
-                            <h2>PDFO for Python</h2>
+                            <h2>Python</h2>
 
                             <p>
                                 PDFO provides the following Python functions: <code>pdfo</code>, <code>uobyqa</code>, <code>newuoa</code>, <code>bobyqa</code>, <code>lincoa</code>, and <code>cobyla</code>.
@@ -562,7 +566,7 @@
                                         <td class="p-3">
                                             Wheel distributions of the package are now available on <a class="theme-link" href="https://pypi.org/project/pdfo/#files" target="_blank">PyPI</a>
                                             for Python 3.7 and above on Windows, Linux, and macOS.  The wheel distributions are generated automatically using <a class="theme-link"
-                                                href="https://github.com/pdfo/pdfo/actions" target="_blank">GitHub Actions</a>. Users do not need to handle them anymore as long as
+                                                href="https://github.com/pdfo/pdfo/actions" target="_blank">GitHub Actions</a>. Python users do not need to handle the dependencies anymore as long as
                                             they install PDFO via <a class="theme-link" href="https://pypi.org/project/pdfo/#files" target="_blank">PyPI</a>.
                                         </td>
                                     </tr>
