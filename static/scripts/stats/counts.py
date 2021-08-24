@@ -34,11 +34,10 @@ def github_count(user, package):
 
 
 if __name__ == '__main__':
-    today = date.today()
     with open(sys.argv[1], 'w') as fd:
         json.dump({
             'conda': conda_count('pdfo'),
             'pypi': pypi_count('pdfo'),
             'github': github_count('pdfo', 'pdfo'),
-            'update': today.strftime('%B %d, %Y'),
+            'date': date.today().strftime('%B %d, %Y'),
         }, fd)

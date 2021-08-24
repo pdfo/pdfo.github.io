@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function() {
     /* Count the number of downloads of the Github repository */
 
     // GithubAPI URL

@@ -49,21 +49,34 @@
                                 <span class="logo-text">
                                     PDFO
                                     <span class="text-alt d-inline-flex">
-                                        <span class="d-none d-md-flex">&mdash; Powell's Derivative-Free Optimization solvers</span>
+                                        <span class="d-none d-xl-flex">&mdash; Powell's Derivative-Free Optimization solvers</span>
                                     </span>
                                 </span>
                             </a>
                         </div>
                     </div>
                     <div class="docs-top-utilities d-flex justify-content-end align-items-center">
-                        <ul class="social-list list-inline mx-md-3 mx-lg-5 mb-0 d-none d-lg-flex">
-                            <li class="list-inline-item">
-                                <a href="https://github.com/pdfo/pdfo" target="_blank">
-                                    <i class="fab fa-github fa-fw"></i>
-                                </a>
-                            </li>
-                        </ul>
-                        <a href="docs.html#installation" class="dark-bg btn btn-primary d-none d-lg-flex">Installation</a>
+                        <div class="d-none d-sm-flex align-items-center">
+                            <ul class="social-list list-inline mx-5 mb-0">
+                                <li class="list-inline-item">
+                                    <a href="https://github.com/pdfo/pdfo" target="_blank">
+                                        <i class="fab fa-github fa-fw"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <a href="docs.html#installation" class="dark-bg btn btn-primary">Installation</a>
+                            <div class="btn-group ml-3" role="group" id="badgeDownloads" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button type="button" class="btn btn-secondary total-downloads"></button>
+                                <button type="button" class="btn btn-primary dropdown-toggle">downloads</button>
+                            </div>
+                            <div class="dropdown-menu" aria-labelledby="badgeDownloads">
+                                <div class="dropdown-item">GitHub: <span class="github-downloads"></span></div>
+                                <div class="dropdown-item">PyPI: <span class="pypi-downloads"></span></div>
+                                <div class="dropdown-item">Anaconda: <span class="conda-downloads"></span></div>
+                                <div class="dropdown-divider"></div>
+                                <div class="dropdown-item">Retrieved on <span class="date-downloads"></span></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -283,8 +296,11 @@
         </footer>
 
         <!-- Javascript -->
-        <script src="static/scripts/plugins/jquery-3.3.1.slim.min.js"></script>
+        <script src="static/scripts/plugins/jquery-3.4.1.min.js"></script>
         <script src="static/scripts/plugins/popper-1.14.7.min.js"></script>
         <script src="static/scripts/plugins/bootstrap-4.3.1.min.js"></script>
+
+        <!-- Page Specific JS -->
+        <script src="static/scripts/count-downloads.js"></script>
     </body>
 </html>

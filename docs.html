@@ -56,21 +56,34 @@
                                 <span class="logo-text">
                                     PDFO
                                     <span class="text-alt d-inline-flex">
-                                        <span class="d-none d-md-flex">&mdash; Powell's Derivative-Free Optimization solvers</span>
+                                        <span class="d-none d-xl-flex">&mdash; Powell's Derivative-Free Optimization solvers</span>
                                     </span>
                                 </span>
                             </a>
                         </div>
                     </div>
                     <div class="docs-top-utilities d-flex justify-content-end align-items-center">
-                        <ul class="social-list list-inline mx-md-3 mx-lg-5 mb-0 d-none d-lg-flex">
-                            <li class="list-inline-item">
-                                <a href="https://github.com/pdfo/pdfo" target="_blank">
-                                    <i class="fab fa-github fa-fw"></i>
-                                </a>
-                            </li>
-                        </ul>
-                        <a href="#installation" class="dark-bg btn btn-primary d-none d-lg-flex">Installation</a>
+                        <div class="d-none d-sm-flex align-items-center">
+                            <ul class="social-list list-inline mx-5 mb-0">
+                                <li class="list-inline-item">
+                                    <a href="https://github.com/pdfo/pdfo" target="_blank">
+                                        <i class="fab fa-github fa-fw"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <a href="docs.html#installation" class="dark-bg btn btn-primary">Installation</a>
+                            <div class="btn-group ml-3" role="group" id="badgeDownloads" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button type="button" class="btn btn-secondary total-downloads"></button>
+                                <button type="button" class="btn btn-primary dropdown-toggle">Downloads</button>
+                            </div>
+                            <div class="dropdown-menu" aria-labelledby="badgeDownloads">
+                                <div class="dropdown-item">GitHub: <span class="github-downloads"></span></div>
+                                <div class="dropdown-item">PyPI: <span class="pypi-downloads"></span></div>
+                                <div class="dropdown-item">Anaconda: <span class="conda-downloads"></span></div>
+                                <div class="dropdown-divider"></div>
+                                <div class="dropdown-item">Retrieved on <span class="date-downloads"></span></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -221,19 +234,8 @@
                         <ul class="list list-unstyled pl-0">
                             <li>
                                 <a href="https://github.com/pdfo/pdfo/releases/download/v1.1/pdfo-1.1.zip"><i class="fas fa-download mr-2"></i>Version 1.1</a>
-                                <span class="display-download-count">Download count: <span class="count-downloads"></span></span>
                             </li>
                         </ul>
-
-                        <p>
-                            Download count on <a class="theme-link" href="https://pypi.org/project/pdfo" target="_blank">PyPI</a> according to <a class="theme-link" href="https://pepy.tech/" target="_blank">PePy</a>: &nbsp;
-                            <a href="https://pepy.tech/project/pdfo" target="_blank"><img height="19" alt="PDFO download count on PyPI" src="https://pepy.tech/badge/pdfo"></a>
-                        </p>
-
-                        <p>
-                            Download count on <a class="theme-link" href="https://anaconda.org/conda-forge/pdfo" target="_blank">Anaconda</a>: &nbsp;
-                            <a href="https://anaconda.org/conda-forge/pdfo" target="_blank"><img height="19" alt="PDFO download count on Anaconda" src="https://anaconda.org/conda-forge/pdfo/badges/downloads.svg"></a>
-                        </p>
 
                     </article>
 
@@ -802,7 +804,7 @@
         <script src="static/scripts/plugins/highlight-9.15.8.min.js"></script>
         <script defer src="static/scripts/highlight-custom.js"></script>
         <script src="static/scripts/plugins/ekko-lightbox-5.3.0.min.js"></script>
-        <script defer src="static/scripts/count-downloads-github.js"></script>
+        <script src="static/scripts/count-downloads.js"></script>
         <script src="static/scripts/smooth-scroll.js"></script>
         <script src="static/scripts/pdfodocs.js"></script>
     </body>

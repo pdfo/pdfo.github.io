@@ -163,6 +163,10 @@ a.theme-link:hover {
     /* text-decoration-color: rgba(15, 76, 129, 0.8) */
 }
 
+.btn-group .btn+.btn, .btn-group .btn+.btn-group, .btn-group .btn-group+.btn, .btn-group .btn-group+.btn-group {
+    margin-left: 0;
+}
+
 .btn {
     font-weight: normal;
     font-size: 0.9rem;
@@ -181,7 +185,8 @@ a.theme-link:hover {
 
 .btn:hover,
 .btn:active,
-.btn:focus {
+.btn:focus,
+.show > .btn:focus {
     background: #0f4c81;
     /* background: #5d6778; */
     /* box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.5); */
@@ -197,9 +202,21 @@ a.theme-link:hover {
     background: #0f4c81;
 }
 
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+    background: #0f4c81;
+}
+
 .btn-secondary {
     background: #5d6778;
     color: #fff
+}
+
+.btn-secondary:hover,
+.btn-secondary:active,
+.btn-secondary:focus {
+    background: #5d6778;
 }
 
 .btn-light {
@@ -217,6 +234,17 @@ a.theme-link:hover {
     padding-bottom: 0.875rem;
     height: 2.75rem;
     border-color: #e0f7e6;
+}
+
+.dropdown-menu {
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    color: #16181b;
+    text-decoration: none;
+    background-color: #f8f9fa;
 }
 
 .form-control:focus {
