@@ -238,7 +238,7 @@ a.theme-link:hover {
 
 .dropdown-menu {
     font-weight: normal;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 .dropdown-item.active, .dropdown-item:active {
