@@ -2,12 +2,9 @@
 name: Generate a sitemap
 
 on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+  # Run the workflow at the end of every week
+  schedule:
+    - cron: '0 0 * * 0'
   # Run the workflow when it is manually triggered
   workflow_dispatch:
 
