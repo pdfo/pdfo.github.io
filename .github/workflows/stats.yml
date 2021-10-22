@@ -28,7 +28,11 @@ jobs:
 
       - name: Generate statistics
         run: |
-          python -m venv venv
+          # October 22, 2021: GitHub Actions upgraded its default Python to
+          # v3.10 and the requirements cannot be easily met with this version.
+          # We enforce the Python version to v3.9 for the moment, waiting for
+          # official wheels distributions to be released in newer versions.
+          python3.9 -m venv venv
           source venv/bin/activate
           python -m pip install -r ./static/scripts/stats/requirements.txt
           python ./static/scripts/stats/counts.py ${{ env.file_path }}/${{ env.file_name }}
