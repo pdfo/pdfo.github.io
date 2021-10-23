@@ -20,10 +20,13 @@ jobs:
 
       - name: Setup Python
         uses: actions/setup-python@v2
-        # October 22, 2021: GitHub Actions upgraded its default Python to
-        # v3.10 and the requirements cannot be easily met with this version.
-        # We enforce the Python version to v3.9 for the moment, waiting for
-        # official wheels distributions to be released in newer versions.
+        # October 23, 2021: the GitHub actions setup-python upgraded the
+        # default Python to v3.10 and the requirements cannot be easily met
+        # with this version. We enforce the Python version to v3.9 for the
+        # moment, waiting for official wheels distributions to be released in
+        # newer versions. As of today:
+        #   - fastparquet wheels are not available.
+        #   - pandas requires version >= v1.3.3.
         with:
           python-version: '3.9'
 
