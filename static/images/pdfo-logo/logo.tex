@@ -1,4 +1,11 @@
-\documentclass[tikz,crop,convert={outext=.svg,command=\unexpanded{pdf2svg \infile\space\outfile}},multi=false]{standalone}
+\documentclass[
+    tikz,
+    margin=2cm,
+    convert={
+        outext=.svg,
+        command=\unexpanded{pdf2svg \infile\space\outfile}},
+    multi=false,
+]{standalone}
 \usetikzlibrary{shapes.geometric}
 
 \usepackage{xcolor}
