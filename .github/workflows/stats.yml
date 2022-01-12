@@ -20,17 +20,16 @@ jobs:
 
       - name: Setup Python
         uses: actions/setup-python@v2
-        # October 23, 2021: the GitHub actions setup-python upgraded the
+        # January 12, 2022: the GitHub actions setup-python upgraded the
         # default Python to v3.10 and the requirements cannot be easily met
         # with this version. We enforce the Python version to v3.9 for the
         # moment, waiting for official wheels distributions to be released in
         # newer versions. As of today:
         #   - fastparquet wheels are not available.
-        #   - pandas requires version >= v1.3.3.
         with:
           python-version: '3.9'
 
-      - name: Set the dump file
+      - name: Set environment variables
         run: |
           echo "file_path=./static/scripts/stats" >> $GITHUB_ENV
           echo "file_name=stats.json" >> $GITHUB_ENV
@@ -43,12 +42,11 @@ jobs:
           python ./static/scripts/stats/counts.py ${{ env.file_path }}/${{ env.file_name }}
 
       - name: Commit the statistics
-        run: |
-          git config user.name "pdfo"
-          git config user.email "pdfocode@gmail.com"
-          git pull origin master
-          if [[ ! -z "$(git status --porcelain ${{ env.file_path }}/${{ env.file_name }})" ]]; then
-              git add ${{ env.file_path }}/${{ env.file_name }}
-              git commit -m "Update ${{ env.file_name }}"
-              git push origin master
-          fi
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Update ${{ env.file_name }}
+          commit_options: '--no-verify --signoff'
+          status_options: '--untracked-files=no'
+          add_options: '-u'
+          push_options: '--force'
+          skip_dirty_check: true
