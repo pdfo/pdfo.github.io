@@ -1,8 +1,3 @@
-wheel==0.37.1
-numpy==1.22.0
-pandas==1.3.5
-dask==2021.12.0
+condastats==0.1.5
 pypistats==1.0.0
 requests==2.27.1
-fastparquet==0.7.2
-s3fs==2021.11.1
