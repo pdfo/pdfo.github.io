@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: Checkout pdfo.github.io
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           # Set the main branch for the git-auto-commit-action action
           # It is otherwise undefined for any non-push event
