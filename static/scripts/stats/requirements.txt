@@ -1,3 +1,2 @@
 condastats==0.1.5
-pypistats==1.0.0
 requests==2.27.1

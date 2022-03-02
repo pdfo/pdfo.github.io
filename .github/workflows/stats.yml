@@ -32,19 +32,21 @@ jobs:
       - name: Set environment variables
         run: |
           echo "file_path=./static/scripts/stats" >> $GITHUB_ENV
-          echo "file_name=stats.json" >> $GITHUB_ENV
+          echo "file_stats=stats.json" >> $GITHUB_ENV
+          echo "pypi_archive=archive.json" >> $GITHUB_ENV
 
       - name: Generate statistics
         run: |
           python -m venv venv
           source venv/bin/activate
           python -m pip install -r ./static/scripts/stats/requirements.txt
-          python ./static/scripts/stats/counts.py ${{ env.file_path }}/${{ env.file_name }}
+          cd ${{ env.file_path }}
+          python counts.py ${{ env.file_stats }} ${{ env.pypi_archive }}
 
       - name: Commit the statistics
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Update ${{ env.file_name }}
+          commit_message: Update ${{ env.pypi_archive }} and ${{ env.file_stats }}
           commit_options: '--no-verify --signoff'
           status_options: '--untracked-files=no'
           add_options: '-u'
