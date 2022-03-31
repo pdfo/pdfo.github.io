@@ -260,7 +260,7 @@
                     <!-- Installation -->
                     <article class="docs-article" id="installation">
                         <header class="docs-header">
-                            <h1>Installation <span class="docs-time d-none d-md-flex">Last update: August 23, 2021</span></h1>
+                            <h1>Installation <span class="docs-time d-none d-md-flex">Last update: March 31, 2022</span></h1>
                         </header>
 
                         <p>
@@ -278,7 +278,7 @@
                                 To check whether your MEX is ready, run the following code in MATLAB:
                             </p>
 
-                            <pre class="shadow-lg rounded"><code class="displayed hljs"><span class="hljs-attr">mex</span>('-setup', '-v', 'FORTRAN'); <span class="hljs-attr">mex</span>('-v', <span class="hljs-attr">fullfile</span>(matlabroot, 'extern', 'examples', 'refbook', 'timestwo.F')); <span class="hljs-attr">timestwo</span>(1); <span class="hljs-attr">delete</span>('timestwo.mex*'); </code></pre>
+                            <pre class="shadow-lg rounded"><code class="displayed hljs"><span class="hljs-attr">mex</span>('-v', '-setup', 'Fortran'); <span class="hljs-attr">mex</span>('-v', <span class="hljs-attr">fullfile</span>(matlabroot, 'extern', 'examples', 'refbook', 'timestwo.F')); <span class="hljs-attr">timestwo</span>(1); <span class="hljs-attr">delete</span>('timestwo.mex*'); </code></pre>
 
                             <p>
                                 It will attempt to set up your MEX and then compile an <a class="theme-link" href="https://www.mathworks.com/help/matlab/matlab_external/create-fortran-source-mex-file.html" target="blank">example provided by MathWorks</a> for testing MEX on Fortran.
@@ -745,7 +745,7 @@
                     <!-- Acknowledgment -->
                     <article class="docs-article" id="acknowledgment">
                         <header class="docs-header">
-                            <h1>Acknowledgment <span class="docs-time d-none d-md-flex">Last update: August 23, 2021</span></h1>
+                            <h1>Acknowledgment <span class="docs-time d-none d-md-flex">Last update: March 31, 2022</span></h1>
                         </header>
 
                         <p>
@@ -757,7 +757,12 @@
                         </p>
 
                         <p>
-                            The development of PDFO is funded by the <a class="theme-link" href="https://www.ugc.edu.hk/eng/rgc/" target="_blank">Hong Kong Research Grants Council</a> (ref. PolyU 253012/17P and PolyU 153054/20P), the <a class="theme-link" href="https://cerg1.ugc.edu.hk/hkpfs/index.html" target="_blank">Hong Kong Ph.D. Fellowship Scheme</a> (ref. PF18-24698), and the Hong Kong Polytechnic University.
+                            The development of PDFO is a long-term project, which would not be sustainable without the continued funds from
+                            the <a class="theme-link" href="https://www.ugc.edu.hk/eng/rgc/" target="_blank">Hong Kong Research Grants Council</a>
+                            (ref. PolyU 253012/17P and PolyU 153054/20P, and PolyU 153066/21P),
+                            the <a class="theme-link" href="https://cerg1.ugc.edu.hk/hkpfs/index.html" target="_blank">Hong Kong Ph.D. Fellowship Scheme</a> (ref. PF18-24698), and
+                            the <a class="theme-link" href="https://www.polyu.edu.hk" target="_blank">Hong Kong Polytechnic University</a> (PolyU),
+                            in particular the <a class="theme-link" href="https://www.polyu.edu.hk/ama" target="_blank">Department of Applied Mathematics</a> (AMA).
                         </p>
                     </article>
 
