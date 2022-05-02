@@ -1200,6 +1200,11 @@
         "downloads": 34
     },
     {
+        "category": "with_mirrors",
+        "date": "2022-04-30",
+        "downloads": 140
+    },
+    {
         "category": "without_mirrors",
         "date": "2021-09-02",
         "downloads": 53
