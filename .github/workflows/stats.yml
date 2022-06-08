@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Setup Python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v4
         # January 12, 2022: the GitHub actions setup-python upgraded the
         # default Python to v3.10 and the requirements cannot be easily met
         # with this version. We enforce the Python version to v3.9 for the
