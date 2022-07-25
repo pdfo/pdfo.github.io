@@ -1,2 +1,5 @@
-condastats==0.1.5
-requests==2.27.1
+dask==2022.7.1
+pandas==1.4.3
+pyarrow==8.0.0
+requests==2.28.1
+s3fs==2022.5.0
