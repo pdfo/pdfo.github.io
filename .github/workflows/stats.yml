@@ -53,3 +53,4 @@ jobs:
           add_options: '-u'
           push_options: '--force'
           skip_dirty_check: true
+          token: ${{ secrets.GH_TOKEN }}
