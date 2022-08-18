@@ -2,20 +2,21 @@ import json
 import sys
 from datetime import date
 
-import dask.dataframe as dd
+import condastats.cli
 import requests
 
 
 def conda_count(package):
     """Download count through the Anaconda distribution."""
-    df = dd.read_parquet(
-        's3://anaconda-package-data/conda/monthly/*/*.parquet',
-        storage_options={'anon': True},
-    )
-    df = df.query(f'pkg_name == "{package}"')
-    df = df.compute()
-    df['pkg_name'] = df['pkg_name'].cat.remove_unused_categories()
-    return int(df.groupby('pkg_name').counts.sum())
+    # df = dd.read_parquet(
+    #     's3://anaconda-package-data/conda/monthly/*/*.parquet',
+    #     storage_options={'anon': True},
+    # )
+    # df = df.query(f'pkg_name == "{package}"')
+    # df = df.compute()
+    # df['pkg_name'] = df['pkg_name'].cat.remove_unused_categories()
+    # return int(df.groupby('pkg_name').counts.sum())
+    return int(condastats.cli.overall(package))
 
 
 def pypi_count(package, pypi_archive):
