@@ -21,7 +21,7 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
 
       - name: Setup Python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v4
         # January 12, 2022: the GitHub actions setup-python upgraded the
         # default Python to v3.10 and the requirements cannot be easily met
         # with this version. We enforce the Python version to v3.9 for the
@@ -33,23 +33,24 @@ jobs:
 
       - name: Set environment variables
         run: |
-          echo "file_path=./static/scripts/stats" >> $GITHUB_ENV
-          echo "file_stats=stats.json" >> $GITHUB_ENV
-          echo "pypi_archive=archive.json" >> $GITHUB_ENV
+          echo "stats_json=stats.json" >> $GITHUB_ENV
+          echo "archive_conda=archive_conda.json" >> $GITHUB_ENV
+          echo "archive_pypi=archive_pypi.json" >> $GITHUB_ENV
+          echo "archive_github=archive_github.json" >> $GITHUB_ENV
 
       - name: Generate statistics
         run: |
           python -m venv venv
           source venv/bin/activate
-          python -m pip install -r ./static/scripts/stats/requirements.txt
-          cd ${{ env.file_path }}
-          python counts.py ${{ env.file_stats }} ${{ env.pypi_archive }}
-          cat ${{ env.file_stats }}
+          cd static/scripts/stats/
+          python -m pip install -r requirements.txt
+          python counts.py ${{ env.stats_json }} ${{ env.archive_conda }} ${{ env.archive_pypi }} ${{ env.archive_github }}
+          cat ${{ env.stats_json }}
 
       - name: Commit the statistics
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Update ${{ env.pypi_archive }} and ${{ env.file_stats }}
+          commit_message: Update ${{ env.stats_json }}
           commit_options: '--no-verify --signoff'
           status_options: '--untracked-files=no'
           add_options: '-u'
