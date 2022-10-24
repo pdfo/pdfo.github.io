@@ -2055,6 +2055,31 @@
         "downloads": 189
     },
     {
+        "category": "with_mirrors",
+        "date": "2022-10-18",
+        "downloads": 41
+    },
+    {
+        "category": "with_mirrors",
+        "date": "2022-10-19",
+        "downloads": 208
+    },
+    {
+        "category": "with_mirrors",
+        "date": "2022-10-20",
+        "downloads": 200
+    },
+    {
+        "category": "with_mirrors",
+        "date": "2022-10-21",
+        "downloads": 78
+    },
+    {
+        "category": "with_mirrors",
+        "date": "2022-10-22",
+        "downloads": 133
+    },
+    {
         "category": "without_mirrors",
         "date": "2021-09-02",
         "downloads": 53
@@ -4083,5 +4108,30 @@
         "category": "without_mirrors",
         "date": "2022-10-17",
         "downloads": 30
+    },
+    {
+        "category": "without_mirrors",
+        "date": "2022-10-18",
+        "downloads": 41
+    },
+    {
+        "category": "without_mirrors",
+        "date": "2022-10-19",
+        "downloads": 59
+    },
+    {
+        "category": "without_mirrors",
+        "date": "2022-10-20",
+        "downloads": 50
+    },
+    {
+        "category": "without_mirrors",
+        "date": "2022-10-21",
+        "downloads": 41
+    },
+    {
+        "category": "without_mirrors",
+        "date": "2022-10-22",
+        "downloads": 21
     }
 ]
