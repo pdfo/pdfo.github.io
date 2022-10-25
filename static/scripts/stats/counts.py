@@ -1,28 +1,35 @@
 import json
 import sys
-from datetime import date
+from datetime import date, datetime
 
 import condastats.cli
 import requests
 
 
+def _write_archive(archive_path, download_count):
+    with open(archive_path, 'r') as fd:
+        archive = json.load(fd)
+    today = date.today()
+    if len(archive) == 0:
+        archive.append({
+            'date': today.strftime('%Y-%m-%d'),
+            'downloads': download_count,
+        })
+    else:
+        last_data = archive[-1]
+        if today != datetime.strptime(last_data['date'], '%Y-%m-%d'):
+            archive.append({
+                'date': today.strftime('%Y-%m-%d'),
+                'downloads': download_count - last_data['downloads'],
+            })
+    with open(archive_path, 'w') as fd:
+        json.dump(archive, fd, indent=4)
+
+
 def conda_count(package, archive_conda):
     """Download count through the Anaconda distribution."""
-    r = condastats.cli.pkg_version(package)
-    with open(archive_conda, 'r') as fd:
-        archive = json.load(fd)
-    download_count = 0
-    for (_, tag_name), downloads in r.items():
-        data = {'tag_name': f'v{tag_name}', 'downloads': downloads}
-        try:
-            existing_tags = list(map(lambda d: d['tag_name'], archive))
-            archive[existing_tags.index(data['tag_name'])] = data
-        except ValueError:
-            archive.append(data)
-        download_count += data['downloads']
-    archive.sort(key=lambda d: d['tag_name'])
-    with open(archive_conda, 'w') as fd:
-        json.dump(archive, fd, indent=4)
+    download_count = int(condastats.cli.overall(package))
+    _write_archive(archive_conda, download_count)
     return download_count
 
 
@@ -43,23 +50,8 @@ def pypi_count(package, archive_pypi):
 def github_count(user, package, archive_github):
     """Download count through the GitHub repository."""
     r = requests.get(f'https://api.github.com/repos/{user}/{package}/releases')
-    with open(archive_github, 'r') as fd:
-        archive = json.load(fd)
-    download_count = 0
-    for release in r.json():
-        data = {
-            'tag_name': release['tag_name'],
-            'downloads': sum(map(lambda d: d['download_count'], release['assets'])),
-        }
-        try:
-            existing_tags = list(map(lambda d: d['tag_name'], archive))
-            archive[existing_tags.index(data['tag_name'])] = data
-        except ValueError:
-            archive.append(data)
-        download_count += data['downloads']
-    archive.sort(key=lambda d: d['tag_name'])
-    with open(archive_github, 'w') as fd:
-        json.dump(archive, fd, indent=4)
+    download_count = sum(sum(map(lambda d: d['download_count'], release['assets'])) for release in r.json())
+    _write_archive(archive_github, download_count)
     return download_count
 
 
