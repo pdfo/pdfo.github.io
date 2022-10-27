@@ -9,18 +9,18 @@ import requests
 def _write_archive(archive_path, download_count):
     with open(archive_path, 'r') as fd:
         archive = json.load(fd)
-    today = date.today()
+    today = date.today().strftime('%Y-%m-%d')
     if len(archive) == 0:
         archive.append({
-            'date': today.strftime('%Y-%m-%d'),
+            'date': today,
             'downloads': download_count,
         })
     else:
-        last_data = archive[-1]
-        if today != datetime.strptime(last_data['date'], '%Y-%m-%d'):
+        if today != archive[-1]['date']:
+            prev_download_count = sum(map(lambda d: d['downloads'], archive))
             archive.append({
-                'date': today.strftime('%Y-%m-%d'),
-                'downloads': download_count - last_data['downloads'],
+                'date': today,
+                'downloads': download_count - prev_download_count,
             })
     with open(archive_path, 'w') as fd:
         json.dump(archive, fd, indent=4)
