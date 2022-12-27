@@ -52,31 +52,9 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Update sitemap.xml
-          # Used by `git-commit`
-          # See https://git-scm.com/docs/git-commit#_options
-          commit_options: '--no-verify --signoff'
-          # Global pattern of files which should be added to the commit
-          # See the `pathspec`-documentation for git
-          # - https://git-scm.com/docs/git-add#Documentation/git-add.txt-ltpathspecgt82308203
-          # - https://git-scm.com/docs/gitglossary#Documentation/gitglossary.txt-aiddefpathspecapathspec
           file_pattern: sitemap.xml
-          # Local file path to the repository
           repository: .
-          # Commit user and author settings
           commit_user_name: pdfo
           commit_user_email: pdfocode@gmail.com
           commit_author: PDFO <pdfocode@gmail.com>
-          # Used by `git-status`
-          # See https://git-scm.com/docs/git-status#_options
-          status_options: '--untracked-files=no'
-          # Used by `git-add`
-          # See https://git-scm.com/docs/git-add#_options
-          add_options: '-u'
-          # Used by `git-push`
-          # See https://git-scm.com/docs/git-push#_options
-          push_options: '--force'
-          # Disable dirty check and always try to create a commit and push
           skip_dirty_check: true
-          # Prevents the shell from expanding filenames
-          # Details: https://www.gnu.org/software/bash/manual/html_node/Filename-Expansion.html
-          disable_globbing: true
