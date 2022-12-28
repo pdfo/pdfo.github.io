@@ -18,8 +18,8 @@ jobs:
       - name: Checkout pdfo.github.io
         uses: actions/checkout@v3
         with:
+          token: ${{ secrets.GH_TOKEN }}
           # Set the main branch for the git-auto-commit-action action
-          # It is otherwise undefined for any non-push event
           ref: ${{ github.head_ref }}
           # Ensure that the generate-sitemap action has access to the commit history
           fetch-depth: 0
@@ -57,5 +57,4 @@ jobs:
           commit_author: PDFO <pdfocode@gmail.com>
           commit_user_email: pdfocode@gmail.com
           commit_user_name: pdfo
-          token: ${{ secrets.GH_TOKEN }}
           skip_dirty_check: true
