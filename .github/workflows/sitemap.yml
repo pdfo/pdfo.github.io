@@ -54,7 +54,8 @@ jobs:
           commit_message: Update sitemap.xml
           file_pattern: sitemap.xml
           repository: .
-          commit_user_name: pdfo
-          commit_user_email: pdfocode@gmail.com
           commit_author: PDFO <pdfocode@gmail.com>
+          commit_user_email: pdfocode@gmail.com
+          commit_user_name: pdfo
+          token: ${{ secrets.GH_TOKEN }}
           skip_dirty_check: true
