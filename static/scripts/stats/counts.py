@@ -3,6 +3,7 @@ import sys
 from datetime import date
 
 import condastats.cli
+import requests
 from github import Github
 
 
