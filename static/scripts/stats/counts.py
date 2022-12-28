@@ -3,7 +3,7 @@ import sys
 from datetime import date
 
 import condastats.cli
-import requests
+from github import Github
 
 
 def _write_archive(archive_path, download_count):
@@ -49,8 +49,9 @@ def pypi_count(package, archive_pypi):
 
 def github_count(user, package, archive_github):
     """Download count through the GitHub repository."""
-    r = requests.get(f'https://api.github.com/repos/{user}/{package}/releases')
-    download_count = sum(sum(map(lambda d: d['download_count'], release['assets'])) for release in r.json())
+    gh = Github()
+    repo = gh.get_repo(f"{user}/{package}")
+    download_count = sum(sum(map(lambda d: d.download_count, release.get_assets())) for release in repo.get_releases())
     _write_archive(archive_github, download_count)
     return download_count
 

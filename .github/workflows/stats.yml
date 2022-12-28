@@ -40,7 +40,6 @@ jobs:
 
       - name: Generate statistics
         id: statistics
-        continue-on-error: true
         run: |
           python -m venv venv
           source venv/bin/activate
@@ -51,7 +50,6 @@ jobs:
 
       - name: Commit the statistics
         uses: stefanzweifel/git-auto-commit-action@v4
-        if: steps.statistics.outcome == 'success'
         with:
           commit_message: Update ${{ env.stats_json }}
           commit_options: '--no-verify --signoff'
