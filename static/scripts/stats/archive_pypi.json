@@ -2445,6 +2445,21 @@
         "downloads": 194
     },
     {
+        "category": "with_mirrors",
+        "date": "2023-01-04",
+        "downloads": 210
+    },
+    {
+        "category": "with_mirrors",
+        "date": "2023-01-05",
+        "downloads": 37
+    },
+    {
+        "category": "with_mirrors",
+        "date": "2023-01-06",
+        "downloads": 43
+    },
+    {
         "category": "without_mirrors",
         "date": "2021-09-02",
         "downloads": 53
@@ -4863,5 +4878,20 @@
         "category": "without_mirrors",
         "date": "2023-01-03",
         "downloads": 44
+    },
+    {
+        "category": "without_mirrors",
+        "date": "2023-01-04",
+        "downloads": 64
+    },
+    {
+        "category": "without_mirrors",
+        "date": "2023-01-05",
+        "downloads": 37
+    },
+    {
+        "category": "without_mirrors",
+        "date": "2023-01-06",
+        "downloads": 42
     }
 ]
