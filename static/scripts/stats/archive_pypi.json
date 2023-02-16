@@ -2645,6 +2645,11 @@
         "downloads": 349
     },
     {
+        "category": "with_mirrors",
+        "date": "2023-02-14",
+        "downloads": 203
+    },
+    {
         "category": "without_mirrors",
         "date": "2021-09-02",
         "downloads": 53
@@ -5263,5 +5268,10 @@
         "category": "without_mirrors",
         "date": "2023-02-13",
         "downloads": 51
+    },
+    {
+        "category": "without_mirrors",
+        "date": "2023-02-14",
+        "downloads": 52
     }
 ]
