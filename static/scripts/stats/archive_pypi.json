@@ -2740,6 +2740,31 @@
         "downloads": 69
     },
     {
+        "category": "with_mirrors",
+        "date": "2023-03-05",
+        "downloads": 219
+    },
+    {
+        "category": "with_mirrors",
+        "date": "2023-03-06",
+        "downloads": 136
+    },
+    {
+        "category": "with_mirrors",
+        "date": "2023-03-07",
+        "downloads": 107
+    },
+    {
+        "category": "with_mirrors",
+        "date": "2023-03-08",
+        "downloads": 92
+    },
+    {
+        "category": "with_mirrors",
+        "date": "2023-03-09",
+        "downloads": 586
+    },
+    {
         "category": "without_mirrors",
         "date": "2021-09-02",
         "downloads": 53
@@ -5453,5 +5478,30 @@
         "category": "without_mirrors",
         "date": "2023-03-04",
         "downloads": 68
+    },
+    {
+        "category": "without_mirrors",
+        "date": "2023-03-05",
+        "downloads": 219
+    },
+    {
+        "category": "without_mirrors",
+        "date": "2023-03-06",
+        "downloads": 135
+    },
+    {
+        "category": "without_mirrors",
+        "date": "2023-03-07",
+        "downloads": 107
+    },
+    {
+        "category": "without_mirrors",
+        "date": "2023-03-08",
+        "downloads": 86
+    },
+    {
+        "category": "without_mirrors",
+        "date": "2023-03-09",
+        "downloads": 138
     }
 ]
