@@ -176,12 +176,12 @@
                             </a>
                         </li>
 
-                        <!-- Licence -->
+                        <!-- References -->
                         <li class="nav-item section-title">
                             <a class="nav-link active" href="#references">
                                 <span class="theme-icon-holder mr-2">
                                     <i class="fas fa-quote-left"></i>
-                                </span>References
+                                </span>Citation
                             </a>
                         </li>
 
@@ -491,7 +491,6 @@
                                 a target function value <small>\(10^{-2}\)</small>, it suffices to replace <code>pdfo(chrosen, x0)</code> in the above example by
                             </p>
                             <pre class="shadow-lg rounded"><code class="displayed hljs">pdfo(chrosen, x0, method='lincoa', options={'maxfev': 50, 'ftarget': 1e-2})</code></pre>
-
                         </section>
                     </article>
 
@@ -647,33 +646,55 @@
                     <!-- References -->
                     <article class="docs-article" id="references">
                         <header class="docs-header">
-                            <h1>References <span class="docs-time d-none d-md-flex">Last update: August 23, 2021</span></h1>
+                            <h1>Citation <span class="docs-time d-none d-md-flex">Last update: June 15, 2023</span></h1>
                         </header>
 
                         <section class="docs-intro">
                             <p>
+                                If you use PDFO, please cite the following paper. Note that PDFO
+                                contains improvements and bug fixes that do not exist in Powell's
+                                original code. See Subsections 4.3&ndash;4.5 of the paper below for details.
+                            </p>
+
+                            <p>
+                                T. M. Ragonneau and Z. Zhang, <a class="theme-link" href="https://arxiv.org/pdf/2302.13246.pdf" target="_blank">PDFO: a cross-platform package for
+                                Powell's derivative-free optimization solvers</a>, <a class="theme-link" href="https://arxiv.org/abs/2302.13246" target="_blank">arXiv:2302.13246</a>, 2023.
+                            </p>
+
+                            <pre class="shadow-lg rounded"><code class="displayed hljs">@misc{Ragonneau_Zhang_2023,
+    title        = {{PDFO}: a cross-platform package for {P}owell's derivative-free optimization solvers},
+    author       = {Ragonneau, T. M. and Zhang, Z.},
+    howpublished = {arXiv:2302.13246},
+    year         = 2023,
+}</code></pre>
+
+                            <p>
+                                In addition, references for Powell's methods are as follows.
+                            </p>
+
+                            <p>
                                 <a class="theme-link" href="https://link.springer.com/chapter/10.1007/978-94-015-8330-5_4" target="_blank">[1]</a>
-                                M. J. D. Powell, A direct search optimization method that models the objective and constraint functions by linear interpolation, In Advances in Optimization and Numerical Analysis, eds. S. Gomez and J. P. Hennart, pages 51--67, Springer Verlag, Dordrecht, Netherlands, 1994
+                                M. J. D. Powell, A direct search optimization method that models the objective and constraint functions by linear interpolation, In Advances in Optimization and Numerical Analysis, eds. S. Gomez and J. P. Hennart, pages 51&ndash;67, Springer Verlag, Dordrecht, Netherlands, 1994
                             </p>
                             <p>
                                 <a class="theme-link" href="http://www.damtp.cam.ac.uk/user/na/NA_papers/NA2000_14.ps.gz" target="_blank">[2]</a>
-                                M. J. D. Powell, UOBYQA: unconstrained optimization by quadratic approximation, <i>Math.  Program.</i>, 92(B):555--582, 2002
+                                M. J. D. Powell, UOBYQA: unconstrained optimization by quadratic approximation, <i>Math.  Program.</i>, 92(B):555&ndash;582, 2002
                             </p>
                             <p>
                                 <a class="theme-link" href="http://www.damtp.cam.ac.uk/user/na/NA_papers/NA2002_08.ps.gz" target="_blank">[3]</a>
-                                M. J. D. Powell, Least Frobenius norm updating of quadratic models that satisfy interpolation conditions. <i>Math.  Program.</i>, 100:183--215, 2004
+                                M. J. D. Powell, Least Frobenius norm updating of quadratic models that satisfy interpolation conditions. <i>Math.  Program.</i>, 100:183&ndash;215, 2004
                             </p>
                             <p>
                                 <a class="theme-link" href="http://www.damtp.cam.ac.uk/user/na/NA_papers/NA2003_03.ps.gz" target="_blank">[4]</a>
-                                M. J. D. Powell, On the use of quadratic models in unconstrained minimization without derivatives, <i>Optim. Methods Softw.</i>, 19:399--411, 2004
+                                M. J. D. Powell, On the use of quadratic models in unconstrained minimization without derivatives, <i>Optim. Methods Softw.</i>, 19:399&ndash;411, 2004
                             </p>
                             <p>
                                 <a class="theme-link" href="http://www.damtp.cam.ac.uk/user/na/NA_papers/NA2004_01.pdf" target="_blank">[5]</a>
-                                M. J. D. Powell, On updating the inverse of a KKT matrix, in <i>Numerical Linear Algebra and Optimization</i>, ed. Ya-xiang Yuan, Science Press (Beijing), pp. 56--78, 2004
+                                M. J. D. Powell, On updating the inverse of a KKT matrix, in <i>Numerical Linear Algebra and Optimization</i>, ed. Ya-xiang Yuan, Science Press (Beijing), pp. 56&ndash;78, 2004
                             </p>
                             <p>
                                 <a class="theme-link" href="http://www.damtp.cam.ac.uk/user/na/NA_papers/NA2004_08.pdf" target="_blank">[6]</a>
-                                M. J. D. Powell, The NEWUOA software for unconstrained optimization without derivatives, In <i>Large-Scale Nonlinear Optimization</i>, eds. G. Di Pillo and M. Roma, pages 255--297, Springer, New York, US, 2006
+                                M. J. D. Powell, The NEWUOA software for unconstrained optimization without derivatives, In <i>Large-Scale Nonlinear Optimization</i>, eds. G. Di Pillo and M. Roma, pages 255&ndash;297, Springer, New York, US, 2006
                             </p>
                             <p>
                                 <a class="theme-link" href="http://www.damtp.cam.ac.uk/user/na/NA_papers/NA2007_03.pdf" target="_blank">[7]</a>
@@ -681,7 +702,7 @@
                             </p>
                             <p>
                                 <a class="theme-link" href="http://www.damtp.cam.ac.uk/user/na/NA_papers/NA2007_05.pdf" target="_blank">[8]</a>
-                                M. J. D. Powell, Developments of NEWUOA for minimization without derivatives, <i>IMA J.  Numer. Anal.</i>, 28:649--664, 2008
+                                M. J. D. Powell, Developments of NEWUOA for minimization without derivatives, <i>IMA J.  Numer. Anal.</i>, 28:649&ndash;664, 2008
                             </p>
                             <p>
                                 <a class="theme-link" href="http://www.damtp.cam.ac.uk/user/na/NA_papers/NA2009_06.pdf" target="_blank">[9]</a>
@@ -689,7 +710,17 @@
                             </p>
                             <p>
                                 <a class="theme-link" href="http://www.damtp.cam.ac.uk/user/na/NA_papers/NA2014_02.pdf" target="_blank">[10]</a>
-                                M. J. D. Powell, On fast trust region methods for quadratic models with linear constraints, <i>Math. Program. Comput.</i>, 7:237--267, 2015
+                                M. J. D. Powell, On fast trust region methods for quadratic models with linear constraints, <i>Math. Program. Comput.</i>, 7:237&ndash;267, 2015
+                            </p>
+                            <p>
+                                <a class="theme-link" href="https://tomragonneau.com/documents/thesis.pdf" target="_blank">[11]</a>
+                                T. M. Ragonneau. <i>Model-Based Derivative-Free Optimization Methods and Software</i>, Chapter 3. PhD thesis, The Hong Kong Polytechnic University, Hong Kong SAR, China, 2022.
+                            </p>
+                            <p>
+                                <a class="theme-link" href="http://www.libprima.net" target="_blank">[12]</a>
+                                Z. Zhang, PRIMA: Reference Implementation for Powell's Methods
+                                with Modernization and Amelioration, available at
+                                <a class="theme-link" href="http://www.libprima.net" target="_blank">http://www.libprima.net</a>, 2023.
                             </p>
 
                             <h2>Remarks</h2>
